@@ -32,6 +32,29 @@ y = "Hello"
 z = 3.14
 instance_tridy = EpickoUzasnaTrida()
 ```
+## List(Seznam)
+V Pythonu je seznam datová struktura, která umožňuje ukládat více prvků v jednom objektu. Prvky seznamu mohou být různých typů a seznam může být měnitelný.
+```python
+my_list = [1, 2, 3, 4, 5, 6, 7]
+my_funky_list = [1, "Hello", True, [1, 2, 3], {"name": "John", "age": 30}]
+```
+## Slovník(set)
+Slovník v Pythonu je datová struktura, která ukládá páry klíč-hodnota. Každý klíč musí být unikátní a neměnitelný. Obsah nemusí být stejný pro všechny prvky, ale měl by pro sanžší iteraci
+```python
+slovnik = {"name": "John", "age": 30}
+slovnik_veliky = {
+ "Velitel":{"name": "John", "age": 3,},
+ "Generál":{"name": "Johnny", "age": 28},
+ {"Ministr všeho": "Udělal jsem tady klíč slovníkem"}:{"name": "John John", "age": 40},
+ [0,1] : {"name": "Johnnnnnn~", "age": 22}
+}
+```
+## Tuple 
+Tuple je datová struktura podobná seznamu, ale na rozdíl od seznamu je neměnitelná, což znamená, že po vytvoření nelze její prvky změnit.
+```python
+my_tuple = (1, 2, 3, 4, 5, 6, 7)
+my_funky_tuple = (1, "Hello", True, [1, 2, 3], {"name": "John", "age": 30})
+```
 ## Input a print
 ```python
 name = input("Zadej své jméno: ")
@@ -108,16 +131,14 @@ for prvek, iterace in enumerate(list):
  print(prvek)
 ```
 ### while
-
-## List
-seznam
-
-## Slovník(set)
-
-## Tuple 
-Množina
-
-
+```python
+while true:
+ print("haha nekonečný smyčka")
+```
+```python
+for char in "Python":
+    print(char)
+```
 ## Funkce
 
 ## Main
