@@ -141,20 +141,37 @@ for char in "Python":
 ```
 ## Funkce
 
-## Main
+```python
+def krasna_fce():
+ print("funguju")
 
+krasna_fce()
+```
+## Main
+V Pythonu není přímo definovaná funkce main jako v některých jiných programovacích jazycích, ale obvykle se kód spouští od horní úrovně souboru.
+```python
+def krasna_fce():
+ print("funguju")
+def main():
+ print("Hello from main function!")
+ krasna_fce()
+
+if __name__ == "__main__":
+    main()
+```
 ## Funkcionální programování
 Jednořádkové podmínky a smyčky
 
 ## Lambda funkce
 Pokud chci ve funkcionálním programování využít funkci, kterou nechci definovat mimo.
 ```python
-# Create a list of numbers
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# Lambda funkce
+add = lambda x, y: x + y
 
-# Use filter() with a lambda function to filter even numbers
+# Mapování
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+
+# Filtrování
 even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
-
-# Print the result
-print(even_numbers)
 ```
