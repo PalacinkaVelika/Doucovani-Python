@@ -25,11 +25,60 @@ while true:
 ```
 
 ## Proměnné
-
+V Pythonu není potřeba explicitně určovat typ proměnné, protože Python je dynamicky typovaný jazyk(typ proměnné je určen automaticky na základě hodnoty, kterou do ní přiřazuješ, a může se měnit během běhu programu).
+```python
+x = 5
+y = "Hello"
+z = 3.14
+instance_tridy = EpickoUzasnaTrida()
+```
 ## Input a print
-
+```python
+name = input("Zadej své jméno: ")
+print("Ahoj,", name)
+```
 ## Podmínky
+Podmínky v pythonu pracují s klíčovými slovy "if", "elif" a "else". Obsah podmínky může, ale nemusí být ohraničen závorkou(většinou se píše bez). Za podmínkou se pro začátek bloku musí napsat ":" a obsah odsadit tak, aby ne byl na stejnm odsazení jako podmínka.
+```python
+x = 10
 
+if x > 5:
+    print("x je větší než 5")
+elif x == 5:
+    print("x je rovno 5")
+else:
+    print("x je menší než 5")
+
+if (x > 5):
+    print("x je větší než 5")
+elif (x == 5):
+    print("x je rovno 5")
+else:
+    print("x je menší než 5")
+```
+```python
+x = True
+
+if x is True:
+    print("x je real")
+else:
+    print("x je faleš")
+
+if x is not True:
+    print("x je real")
+else:
+    print("x je faleš")
+
+if x == True:
+    print("x je real")
+else:
+    print("x je faleš")
+
+if x != True:
+    print("x je real")
+else:
+    print("x je faleš")
+```
 ## Smyčky
 ### for
 #### pass/...
