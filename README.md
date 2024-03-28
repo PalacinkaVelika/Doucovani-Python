@@ -140,12 +140,88 @@ for char in "Python":
     print(char)
 ```
 ## Funkce
-
 ```python
 def krasna_fce():
  print("funguju")
 
 krasna_fce()
+```
+### Zadávání Parametrů
+#### Povinné parametry
+```python
+def greet(name):
+    return "Hello, " + name
+print(greet("John"))
+```
+#### Nepovinné parametry (volitelné parametry)
+```python
+def greet(name, greeting="Hello"):
+    return greeting + ", " + name
+
+print(greet("John"))
+print(greet("John", "Hi"))
+```
+#### Nepojmenované argumenty
+```python
+def add(x, y):
+    return x + y
+
+print(add(5, 3))
+```
+#### Pojmenované argumenty
+```python
+def greet(greeting, name):
+    return greeting + ", " + name
+
+print(greet(name="John", greeting="Hello"))
+print(greet(greeting="Hi", name="Alice"))
+```
+### Zadávání Returnů
+#### Jednoduchý return
+```python
+def add(x, y):
+    return x + y
+
+result = add(3, 5)
+print(result)
+```
+#### Vícerozměrný return
+```python
+def rectangle_info(width, height):
+    area = width * height
+    perimeter = 2 * (width + height)
+    return area, perimeter
+
+area, perimeter = rectangle_info(4, 6)
+print("Area:", area)
+print("Perimeter:", perimeter)
+```
+#### Return bez hodnoty
+```python
+def greet(name):
+    if name == "":
+        return
+    return "Hello, " + name
+
+print(greet("John"))
+print(greet(""))
+```
+#### Určení nebo neurčení Typu:
+##### Statické typování:
+```python
+def add(x: int, y: int) -> int:
+    return x + y
+
+result = add(3, 5)
+print(result)
+```
+##### Dynamické typování:
+```python
+def add(x, y):
+    return x + y
+
+result = add("Hello ", "world")
+print(result)
 ```
 ## Main
 V Pythonu není přímo definovaná funkce main jako v některých jiných programovacích jazycích, ale obvykle se kód spouští od horní úrovně souboru.
@@ -165,13 +241,15 @@ Jednořádkové podmínky a smyčky
 ## Lambda funkce
 Pokud chci ve funkcionálním programování využít funkci, kterou nechci definovat mimo.
 ```python
-# Lambda funkce
 add = lambda x, y: x + y
-
-# Mapování
+```
+Mapování v Pythonu je funkce, která umožňuje aplikovat jinou funkci na všechny prvky daného iterovatelného objektu, jako je seznam, tuple nebo slovník. Výsledkem mapování je nový iterovatelný objekt, který obsahuje výsledky aplikace dané funkce na každý prvek původního objektu.
+```python
 numbers = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x**2, numbers))
-
+```
+Filtrování v Pythonu je proces výběru určitých prvků z iterovatelného objektu na základě určité podmínky.
+```python
 # Filtrování
 even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
 ```
