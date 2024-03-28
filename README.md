@@ -79,11 +79,34 @@ if x != True:
 else:
     print("x je faleš")
 ```
+#### pass/...
+V bloku musí být napsaný nějaký příkaz, jinak compiler vyhazuje chybu. Pokud se chceš vyhnout červeným řádkům při tvoření nového kodu, můžeš využít "pass" nebo "...", který umožnuje prázdný blok. Toto platí pro všechny "bloky", nejen pro podmínky.
+```python
+if x is True:
+    pass
+else:
+    ...
+```
 ## Smyčky
 ### for
-#### pass/...
-### foreach
-
+Python nemá klasický for loop jako takový, pracuje pouze s for each loopem. U klasíckého loopu iteruji ve funkci range, abych docílil chtěné funkcionality
+```python
+# for(int i = 1; i<10, i+=2)
+for i in range(1,10,2):
+ print(i)
+```
+Klasický for each.
+```python
+list = [10,51,902,23,44]
+for prvek in list:
+ print(prvek)
+```
+Enumerate zároven umožnuje pracovat s tím, kolikátá je to iterace.
+```python
+list = [10,51,902,23,44]
+for prvek, iterace in enumerate(list):
+ print(prvek)
+```
 ### while
 
 ## List
