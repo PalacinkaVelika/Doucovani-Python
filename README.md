@@ -237,11 +237,30 @@ if __name__ == "__main__":
 ```
 ## Funkcionální programování
 Jednořádkové podmínky a smyčky
+```python
+a = False
+x = "lets go" if a else "no go" 
+```
+```python
+func(a):
+ return a + 25
+
+arr = [1,5,6,4,2]
+
+x = [func(a) for a in arr]
+```
+
 
 ## Lambda funkce
 Pokud chci ve funkcionálním programování využít funkci, kterou nechci definovat mimo.
 ```python
 add = lambda x, y: x + y
+x = add(1,2) #3
+```
+```python
+arr = [1,5,6,4,2]
+
+x = [lambda a: a + 25 for a in arr]
 ```
 Mapování v Pythonu je funkce, která umožňuje aplikovat jinou funkci na všechny prvky daného iterovatelného objektu, jako je seznam, tuple nebo slovník. Výsledkem mapování je nový iterovatelný objekt, který obsahuje výsledky aplikace dané funkce na každý prvek původního objektu.
 ```python
