@@ -164,7 +164,8 @@ arr = [1,5,6,4,2]
 x = [(lambda a: a + 25)(a) for a in arr]
 print(x)
 '''
-
+'''
 arr = [1,"5",6.4156,4,2]
 x = list(map(lambda a: int(a), arr))
 print(x) # [1, 5, 6, 4, 2]
+'''
