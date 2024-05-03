@@ -169,3 +169,124 @@ arr = [1,"5",6.4156,4,2]
 x = list(map(lambda a: int(a), arr))
 print(x) # [1, 5, 6, 4, 2]
 '''
+
+
+# "pravidla" tříd
+# privátní / veřejný -> private public
+# getter a setter
+
+
+class Pes:
+    def __init__(self, jmeno, barva, majitel):
+        self._jmeno = jmeno
+        self._barva = barva
+        self._majitel = majitel
+        
+    # public metoda
+    def spocitej_vzdalenost_ode_me(self):
+       # cislo = vypocet()
+       cislo = 1
+       return cislo
+    # private metoda
+    def vypocet():
+        pass
+    
+    def stekej(self, cokoliv):
+        print(f"haf {cokoliv}")
+        
+    def rekni_sve_jmeno(self):
+        print(f"jmenuju se {self._jmeno}")
+        
+    ''' 
+    # python to neumi ale je to cool vedet     
+    
+    def rekni_sve_jmeno(self, parameter, parameterr, parametereef):
+        print("něco jiného")
+
+
+    def rekni_sve_jmeno(self, parameter, parameterr, parametereef, out):
+        print("něco jiného")
+        return "ahoj"
+        
+    rekni_sve_jmeno(1,2,3) # nevraci nic
+    rekni_sve_jmeno(1,2,3,necim) # vraci ahoj
+    '''  
+    # špatně udělaný setter
+    def set_barva(self, nova_barva):
+        self._barva = nova_barva
+    
+    # špatně udělaný getter
+    def get_barva(self):
+        return "co ti je do toho jakou mám barvu"
+    
+    # správně udělaný getter a setter
+    @property
+    def barva(self):
+        return self._barva
+
+    @barva.setter
+    def barva(self, value):
+        self._barva = value
+        
+        
+    @staticmethod
+    def jak_dela_pes():               
+        return "haf haf"  
+
+# instance třídy (varianta)
+alik = Pes("alik", "cernej", "Josef")
+alik.get_barva()
+alik.stekej("pepepepe")
+alik.rekni_sve_jmeno()
+
+# alik.rekni_sve_jmeno(1,1,1)
+
+# statická třída nemá instanci - používá se hlavně pro utility
+class StatickaTrida:
+    @staticmethod
+    def deset_cisel_pi():
+        return 3.1419841384
+    
+StatickaTrida.deset_cisel_pi()
+
+
+
+class Vojak:
+    #kontruktor
+    def __init__(self, jmeno, zivoty=100, utok=10):
+        self.zivoty = zivoty
+        self.utok = utok
+        self.jmeno = jmeno
+    # metoda
+    def zautoc(self, vojak_na_nez_utocim):
+        vojak_na_nez_utocim.prijmi_dmg(self.utok)
+        print(f"({self.jmeno}) (životy:{self.zivoty}): já jsem zautocil na {vojak_na_nez_utocim.jmeno}")
+    
+    def prijmi_dmg(self, dmg):
+        self.zivoty = self.zivoty - dmg
+        print(f"({self.jmeno}) (životy:{self.zivoty}): au! schytal jsem dmg!")
+        
+    #sečtením dvou vojaku
+    def __add__(self, other):
+        return Vojak(self.jmeno + other.jmeno, self.zivoty+other.zivoty, self.utok+other.utok)
+    
+    # přetypování na string
+    def __str__(self):
+        return f"Mé jméno jest nádherná {self.jmeno}"
+
+        
+        
+rusak = Vojak("rus")
+cech = Vojak("cech", 200, 20)
+
+novy_supervojak = rusak + cech
+print(novy_supervojak.jmeno)
+print(novy_supervojak.zivoty)
+print(novy_supervojak.utok)
+print(str(rusak))
+
+rusak.zautoc(cech)
+cech.zautoc(rusak)
+cech.zautoc(rusak)
+rusak.zautoc(cech)
+rusak.zautoc(cech)
